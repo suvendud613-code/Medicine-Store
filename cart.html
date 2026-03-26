@@ -4,144 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart - IRSHAD HUSSAIN</title>
+    <meta name="description" content="Review your shopping cart at IRSHAD HUSSAIN Online Medicine Store.">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">
-                <span class="logo-icon">💊</span>
-                <a href="index.html">IRSHAD HUSSAIN</a>
-            </div>
+            <div class="nav-logo"><span class="logo-icon">💊</span><a href="index.html">IRSHAD HUSSAIN</a></div>
             <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="products.html" class="nav-link">Products</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#categories" class="nav-link">Categories</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#contact" class="nav-link">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a href="cart.html" class="nav-link cart-link active">
-                        <span class="cart-icon">🛒</span>
-                        Cart <span class="cart-count">0</span>
-                    </a>
-                </li>
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="cart.html" class="nav-link cart-link active"><span class="cart-icon">🛒</span> Cart <span class="cart-count">0</span></a></li>
+                <li class="nav-item"><button class="dark-toggle">🌙</button></li>
             </ul>
-            <div class="hamburger" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
         </div>
     </nav>
 
-    <!-- Cart Page Header -->
-    <section class="page-header">
-        <h1>Shopping Cart</h1>
-        <p>Review your items before checkout</p>
-    </section>
+    <section class="page-header"><h1>Shopping Cart</h1><p>Review your items before checkout</p></section>
 
-    <!-- Cart Content -->
     <section class="cart-section">
         <div class="cart-container">
             <div class="cart-items">
                 <h2>Your Items</h2>
-                <div class="cart-items-list" id="cartItems">
-                    <!-- Cart items will be loaded by JavaScript -->
-                </div>
-                <div class="empty-cart" id="emptyCart" style="display: none;">
+                <div class="cart-items-list" id="cartItems"></div>
+                <div class="empty-cart" id="emptyCart" style="display:none;">
                     <div class="empty-icon">🛒</div>
                     <h3>Your cart is empty</h3>
                     <p>Start shopping to add items to your cart</p>
                     <a href="products.html" class="btn btn-primary">Continue Shopping</a>
                 </div>
             </div>
-
             <aside class="cart-summary">
                 <div class="summary-card">
                     <h3>Order Summary</h3>
-                    
-                    <div class="summary-row">
-                        <span>Subtotal:</span>
-                        <span id="subtotal">₹0.00</span>
-                    </div>
-                    <div class="summary-row">
-                        <span>Shipping:</span>
-                        <span id="shipping">₹0.00</span>
-                    </div>
-                    <div class="summary-row">
-                        <span>Tax:</span>
-                        <span id="tax">₹0.00</span>
-                    </div>
-                    
+                    <div class="summary-row"><span>Subtotal:</span><span id="subtotal">₹0.00</span></div>
+                    <div class="summary-row"><span>Shipping:</span><span id="shipping">₹0.00</span></div>
+                    <div class="summary-row"><span>Tax:</span><span id="tax">₹0.00</span></div>
                     <hr>
-                    
-                    <div class="summary-row summary-total">
-                        <span>Total:</span>
-                        <span id="total">₹0.00</span>
-                    </div>
-
+                    <div class="summary-row summary-total"><span>Total:</span><span id="total">₹0.00</span></div>
                     <div class="promo-code">
                         <input type="text" placeholder="Enter promo code" id="promoCode">
                         <button class="btn btn-secondary">Apply</button>
                     </div>
-
-                    <button class="btn btn-primary" id="checkoutBtn">Proceed to Checkout</button>
+                    <button class="btn btn-primary" id="checkoutBtn">Proceed to Checkout →</button>
                     <a href="products.html" class="btn btn-secondary">Continue Shopping</a>
                 </div>
-
                 <div class="info-card">
                     <h4>✅ Secure Checkout</h4>
                     <p>Your payment information is encrypted and secure</p>
-                    <p style="margin-top: 15px; font-size: 12px; color: #666;">💳 All major credit cards accepted</p>
+                    <p style="margin-top:10px;font-size:0.8rem;color:var(--text-muted)">💳 All major credit cards accepted</p>
                 </div>
             </aside>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <div class="footer-section">
-                <h4>About MediCare</h4>
-                <p>Your trusted online medicine store delivering quality medicines safely and conveniently to your home.</p>
-            </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Contact Us</h4>
-                <p>Email: support@irshadhussain.com</p>
-                <p>Phone: 9391796638-MEDICARE</p>
-                <p>Hours: 24/7 Support Available</p>
-            </div>
-            <div class="footer-section">
-                <h4>Follow Us</h4>
-                <div class="social-links">
-                    <a href="#">Facebook</a>
-                    <a href="#">Twitter</a>
-                    <a href="#">Instagram</a>
-                </div>
-            </div>
+            <div class="footer-section"><h4>About IRSHAD HUSSAIN</h4><p>Your trusted online medicine store.</p></div>
+            <div class="footer-section"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+            <div class="footer-section"><h4>Contact Us</h4><p>Email: support@irshadhussain.com</p><p>Phone: 9391796638</p></div>
+            <div class="footer-section"><h4>Follow Us</h4><div class="social-links"><a href="#">FB</a><a href="#">TW</a><a href="#">IG</a><a href="#">YT</a></div></div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 IRSHAD HUSSAIN. All rights reserved. | Licensed Pharmacy</p>
-        </div>
+        <div class="footer-bottom"><p>&copy; 2026 IRSHAD HUSSAIN. All rights reserved. | Licensed Pharmacy</p></div>
     </footer>
-
+    <button class="back-to-top">↑</button>
     <script src="script.js"></script>
 </body>
 </html>

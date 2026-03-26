@@ -4,110 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products - IRSHAD HUSSAIN</title>
+    <meta name="description" content="Browse our wide selection of quality medicines at IRSHAD HUSSAIN.">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">
-                <span class="logo-icon">💊</span>
-                <a href="index.html">IRSHAD HUSSAIN</a>
-            </div>
+            <div class="nav-logo"><span class="logo-icon">💊</span><a href="index.html">IRSHAD HUSSAIN</a></div>
             <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="products.html" class="nav-link active">Products</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#categories" class="nav-link">Categories</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#contact" class="nav-link">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a href="cart.html" class="nav-link cart-link">
-                        <span class="cart-icon">🛒</span>
-                        Cart <span class="cart-count">0</span>
-                    </a>
-                </li>
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="products.html" class="nav-link active">Products</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="cart.html" class="nav-link cart-link"><span class="cart-icon">🛒</span> Cart <span class="cart-count">0</span></a></li>
+                <li class="nav-item"><button class="dark-toggle">🌙</button></li>
             </ul>
-            <div class="hamburger" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
         </div>
     </nav>
 
-    <!-- Products Page Header -->
-    <section class="page-header">
-        <h1>Our Products</h1>
-        <p>Browse our wide selection of quality medicines</p>
-    </section>
+    <section class="page-header"><h1>Our Products</h1><p>Browse our wide selection of quality medicines</p></section>
 
-    <!-- Filters and Products Section -->
     <section class="products-section">
         <div class="products-container">
-            <!-- Sidebar Filters -->
             <aside class="filters-sidebar">
                 <div class="filter-group">
                     <h3>Categories</h3>
-                    <label class="checkbox">
-                        <input type="checkbox" value="pain-relief"> Pain Relief
-                    </label>
-                    <label class="checkbox">
-                        <input type="checkbox" value="cold-flu"> Cold & Flu
-                    </label>
-                    <label class="checkbox">
-                        <input type="checkbox" value="vitamins"> Vitamins
-                    </label>
-                    <label class="checkbox">
-                        <input type="checkbox" value="digestion"> Digestion
-                    </label>
-                    <label class="checkbox">
-                        <input type="checkbox" value="skin-care"> Skin Care
-                    </label>
-                    <label class="checkbox">
-                        <input type="checkbox" value="first-aid"> First Aid
-                    </label>
+                    <label class="checkbox"><input type="checkbox" value="pain-relief"> Pain Relief</label>
+                    <label class="checkbox"><input type="checkbox" value="cold-flu"> Cold & Flu</label>
+                    <label class="checkbox"><input type="checkbox" value="vitamins"> Vitamins</label>
+                    <label class="checkbox"><input type="checkbox" value="digestion"> Digestion</label>
+                    <label class="checkbox"><input type="checkbox" value="skin-care"> Skin Care</label>
+                    <label class="checkbox"><input type="checkbox" value="first-aid"> First Aid</label>
                 </div>
-
                 <div class="filter-group">
                     <h3>Price Range</h3>
-                    <label class="checkbox">
-                        <input type="checkbox" value="0-50"> Under ₹50
-                    </label>
-                    <label class="checkbox">
-                        <input type="checkbox" value="50-100"> ₹50 - ₹100
-                    </label>
-                    <label class="checkbox">
-                        <input type="checkbox" value="100-200"> ₹100 - ₹200
-                    </label>
-                    <label class="checkbox">
-                        <input type="checkbox" value="200-plus"> ₹200+
-                    </label>
+                    <label class="checkbox"><input type="checkbox" value="0-50"> Under ₹50</label>
+                    <label class="checkbox"><input type="checkbox" value="50-100"> ₹50 - ₹100</label>
+                    <label class="checkbox"><input type="checkbox" value="100-200"> ₹100 - ₹200</label>
                 </div>
-
                 <div class="filter-group">
                     <h3>Rating</h3>
-                    <label class="checkbox">
-                        <input type="checkbox" value="5"> ★★★★★ 5 Star
-                    </label>
-                    <label class="checkbox">
-                        <input type="checkbox" value="4"> ★★★★☆ 4+ Star
-                    </label>
-                    <label class="checkbox">
-                        <input type="checkbox" value="3"> ★★★☆☆ 3+ Star
-                    </label>
+                    <label class="checkbox"><input type="checkbox" value="5"> ★★★★★ 5 Star</label>
+                    <label class="checkbox"><input type="checkbox" value="4"> ★★★★☆ 4+ Star</label>
                 </div>
-
-                <button class="btn btn-secondary" style="width: 100%; margin-top: 20px;">Clear Filters</button>
+                <button class="btn btn-secondary" style="width:100%;margin-top:12px">Clear Filters</button>
             </aside>
-
-            <!-- Products Display -->
             <div class="products-main">
                 <div class="products-toolbar">
                     <input type="text" class="search-input" placeholder="Search medicines..." id="searchInput">
@@ -118,58 +60,21 @@
                         <option value="popular">Most Popular</option>
                     </select>
                 </div>
-
-                <div class="products-grid" id="productsGrid">
-                    <!-- Products will be loaded by JavaScript -->
-                </div>
-
-                <div class="pagination">
-                    <button class="page-btn">← Previous</button>
-                    <button class="page-btn active">1</button>
-                    <button class="page-btn">2</button>
-                    <button class="page-btn">3</button>
-                    <button class="page-btn">Next →</button>
-                </div>
+                <div class="products-grid" id="productsGrid"></div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <div class="footer-section">
-                <h4>About MediCare</h4>
-                <p>Your trusted online medicine store delivering quality medicines safely and conveniently to your home.</p>
-            </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Contact Us</h4>
-                <p>Email: support@irshadhussain.com</p>
-                <p>Phone: 9391796638-MEDICARE</p>
-                <p>Hours: 24/7 Support Available</p>
-            </div>
-            <div class="footer-section">
-                <h4>Follow Us</h4>
-                <div class="social-links">
-                    <a href="#">Facebook</a>
-                    <a href="#">Twitter</a>
-                    <a href="#">Instagram</a>
-                </div>
-            </div>
+            <div class="footer-section"><h4>About IRSHAD HUSSAIN</h4><p>Your trusted online medicine store delivering quality medicines safely and conveniently.</p></div>
+            <div class="footer-section"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+            <div class="footer-section"><h4>Contact Us</h4><p>Email: support@irshadhussain.com</p><p>Phone: 9391796638</p><p>Hours: 24/7 Support Available</p></div>
+            <div class="footer-section"><h4>Follow Us</h4><div class="social-links"><a href="#">FB</a><a href="#">TW</a><a href="#">IG</a><a href="#">YT</a></div></div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 IRSHAD HUSSAIN. All rights reserved. | Licensed Pharmacy</p>
-        </div>
+        <div class="footer-bottom"><p>&copy; 2026 IRSHAD HUSSAIN. All rights reserved. | Licensed Pharmacy</p></div>
     </footer>
-
+    <button class="back-to-top">↑</button>
     <script src="script.js"></script>
 </body>
 </html>

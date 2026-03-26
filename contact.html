@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - IRSHAD HUSSAIN</title>
+    <meta name="description" content="Get in touch with IRSHAD HUSSAIN Online Medicine Store.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo"><span class="logo-icon">💊</span><a href="index.html">IRSHAD HUSSAIN</a></div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li class="nav-item"><a href="cart.html" class="nav-link cart-link"><span class="cart-icon">🛒</span> Cart <span class="cart-count">0</span></a></li>
+                <li class="nav-item"><button class="dark-toggle">🌙</button></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <section class="page-header"><h1>Contact Us</h1><p>We'd love to hear from you</p></section>
+
+    <section class="contact-section">
+        <div class="contact-grid">
+            <form class="contact-form" onsubmit="validateContactForm(event)">
+                <div class="form-group">
+                    <label for="contactName">Full Name *</label>
+                    <input type="text" id="contactName" placeholder="Enter your full name" required>
+                    <span class="error-msg">Please enter your name</span>
+                </div>
+                <div class="form-group">
+                    <label for="contactEmail">Email Address *</label>
+                    <input type="email" id="contactEmail" placeholder="Enter your email" required>
+                    <span class="error-msg">Please enter a valid email</span>
+                </div>
+                <div class="form-group">
+                    <label for="contactPhone">Phone Number</label>
+                    <input type="tel" id="contactPhone" placeholder="Enter your phone number">
+                    <span class="error-msg">Please enter a valid phone number</span>
+                </div>
+                <div class="form-group">
+                    <label for="contactSubject">Subject</label>
+                    <select id="contactSubject">
+                        <option value="">Select a subject</option>
+                        <option>Order Inquiry</option>
+                        <option>Product Question</option>
+                        <option>Return / Refund</option>
+                        <option>Feedback</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="contactMessage">Message *</label>
+                    <textarea id="contactMessage" placeholder="Write your message here..." required></textarea>
+                    <span class="error-msg">Please enter your message</span>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message →</button>
+            </form>
+
+            <div class="contact-info">
+                <div class="contact-card">
+                    <div class="contact-card-icon">📧</div>
+                    <div><h4>Email Us</h4><p>support@irshadhussain.com</p><p>We reply within 24 hours</p></div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-card-icon">📞</div>
+                    <div><h4>Call Us</h4><p>+91 9391796638</p><p>Mon-Sat, 9 AM - 9 PM</p></div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-card-icon">📍</div>
+                    <div><h4>Visit Us</h4><p>123 Healthcare Avenue</p><p>Hyderabad, Telangana 500001</p></div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-card-icon">⏰</div>
+                    <div><h4>Business Hours</h4><p>Online: 24/7</p><p>Store: Mon-Sat, 9 AM - 9 PM</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="section-header"><h2>Frequently Asked Questions</h2><p>Find quick answers to common questions</p></div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-question"><span>How do I place an order?</span><span class="faq-icon">+</span></div>
+                <div class="faq-answer"><p>Simply browse our products, add items to your cart, and proceed to checkout. You can pay online or choose cash on delivery.</p></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question"><span>What is the delivery time?</span><span class="faq-icon">+</span></div>
+                <div class="faq-answer"><p>We deliver within 24 hours for in-city orders and 2-3 business days for other locations. Express delivery is also available.</p></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question"><span>Do I need a prescription?</span><span class="faq-icon">+</span></div>
+                <div class="faq-answer"><p>Over-the-counter medicines don't require a prescription. For prescription medicines, you can upload your prescription during checkout.</p></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question"><span>What is the return policy?</span><span class="faq-icon">+</span></div>
+                <div class="faq-answer"><p>We accept returns within 7 days of delivery for unopened products. Contact our support team to initiate a return.</p></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question"><span>Are the medicines authentic?</span><span class="faq-icon">+</span></div>
+                <div class="faq-answer"><p>Yes, all our medicines are 100% authentic, sourced directly from authorized distributors and manufacturers. We are a licensed pharmacy.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section"><h4>About IRSHAD HUSSAIN</h4><p>Your trusted online medicine store.</p></div>
+            <div class="footer-section"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+            <div class="footer-section"><h4>Contact Us</h4><p>Email: support@irshadhussain.com</p><p>Phone: 9391796638</p></div>
+            <div class="footer-section"><h4>Follow Us</h4><div class="social-links"><a href="#">FB</a><a href="#">TW</a><a href="#">IG</a><a href="#">YT</a></div></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 IRSHAD HUSSAIN. All rights reserved. | Licensed Pharmacy</p></div>
+    </footer>
+    <button class="back-to-top">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>

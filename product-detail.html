@@ -4,87 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Details - IRSHAD HUSSAIN</title>
+    <meta name="description" content="View product details at IRSHAD HUSSAIN Online Medicine Store.">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">
-                <span class="logo-icon">💊</span>
-                <a href="index.html">MediCare</a>
-            </div>
+            <div class="nav-logo"><span class="logo-icon">💊</span><a href="index.html">IRSHAD HUSSAIN</a></div>
             <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="products.html" class="nav-link">Products</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#categories" class="nav-link">Categories</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#contact" class="nav-link">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a href="cart.html" class="nav-link cart-link">
-                        <span class="cart-icon">🛒</span>
-                        Cart <span class="cart-count">0</span>
-                    </a>
-                </li>
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="cart.html" class="nav-link cart-link"><span class="cart-icon">🛒</span> Cart <span class="cart-count">0</span></a></li>
+                <li class="nav-item"><button class="dark-toggle">🌙</button></li>
             </ul>
-            <div class="hamburger" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
         </div>
     </nav>
 
-    <!-- Breadcrumb -->
     <section class="breadcrumb">
-        <a href="index.html">Home</a>
-        <span>/</span>
-        <a href="products.html">Products</a>
-        <span>/</span>
-        <span id="productBreadcrumb">Product</span>
+        <a href="index.html">Home</a><span>/</span>
+        <a href="products.html">Products</a><span>/</span>
+        <span id="productBreadcrumb">Aspirin 500mg</span>
     </section>
 
-    <!-- Product Detail Section -->
     <section class="product-detail">
         <div class="product-detail-container">
             <div class="product-image-section">
-                <div class="product-image-large">
-                    <div class="image-placeholder" id="mainImage">💊</div>
-                </div>
+                <div class="product-image-large"><div class="image-placeholder" id="mainImage">💊</div></div>
                 <div class="product-thumbnails">
                     <div class="thumbnail active" onclick="changeImage(0)">💊</div>
                     <div class="thumbnail" onclick="changeImage(1)">📦</div>
                     <div class="thumbnail" onclick="changeImage(2)">✅</div>
                 </div>
             </div>
-
             <div class="product-info-section">
-                <div class="product-category" id="productCategory">Category</div>
-                <h1 id="productName">Product Name</h1>
-                
+                <div class="product-category" id="productCategory">Pain Relief</div>
+                <h1 id="productName">Aspirin 500mg</h1>
                 <div class="product-rating">
                     <div class="stars" id="productRating">★★★★★</div>
-                    <span class="review-count">(128 reviews)</span>
+                    <span class="review-count">(256 reviews)</span>
                 </div>
-
                 <div class="product-price">
-                    <span class="original-price" id="originalPrice">₹99.99</span>
-                    <span class="current-price" id="currentPrice">₹79.99</span>
-                    <span class="discount-badge" id="discountBadge">-20%</span>
+                    <span class="original-price" id="originalPrice">₹59.99</span>
+                    <span class="current-price" id="currentPrice">₹45.99</span>
+                    <span class="discount-badge" id="discountBadge">-23%</span>
                 </div>
-
                 <div class="product-availability">
                     <span class="availability-status in-stock">✓ In Stock</span>
                     <span class="stock-count">15 items available</span>
                 </div>
-
                 <div class="product-options">
                     <div class="option-group">
                         <label>Quantity:</label>
@@ -95,27 +65,15 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="product-actions">
-                    <button class="btn btn-primary" id="addToCartBtn">Add to Cart</button>
-                    <button class="btn btn-secondary">❤️ Add to Wishlist</button>
+                    <button class="btn btn-primary" onclick="addToCart(1)">Add to Cart</button>
+                    <button class="btn btn-secondary">❤️ Wishlist</button>
                 </div>
-
                 <div class="product-meta">
-                    <div class="meta-item">
-                        <strong>SKU:</strong>
-                        <span id="productSku">MED-001</span>
-                    </div>
-                    <div class="meta-item">
-                        <strong>Category:</strong>
-                        <span id="productCategoryMeta">General Medicine</span>
-                    </div>
-                    <div class="meta-item">
-                        <strong>Manufacturer:</strong>
-                        <span id="productManufacturer">MediCorp</span>
-                    </div>
+                    <div class="meta-item"><strong>SKU:</strong><span>MED-001</span></div>
+                    <div class="meta-item"><strong>Category:</strong><span>Pain Relief</span></div>
+                    <div class="meta-item"><strong>Manufacturer:</strong><span>MediCorp</span></div>
                 </div>
-
                 <div class="product-highlights">
                     <h4>Why Choose This Product?</h4>
                     <ul>
@@ -129,112 +87,72 @@
         </div>
     </section>
 
-    <!-- Product Tabs Section -->
     <section class="product-tabs">
         <div class="tabs-header">
             <button class="tab-button active" onclick="switchTab('description')">Description</button>
             <button class="tab-button" onclick="switchTab('usage')">How to Use</button>
             <button class="tab-button" onclick="switchTab('reviews')">Reviews</button>
         </div>
-
         <div class="tabs-content">
             <div class="tab-pane active" id="description">
                 <h3>Product Description</h3>
-                <p id="productDescription">
-                    This is a high-quality medicine formulated to address various health conditions. 
-                    Made with natural ingredients and backed by scientific research.
-                </p>
+                <p>Aspirin 500mg is a high-quality, FDA-approved pain relief and fever-reducing medication. Trusted by millions worldwide for effective headache, body pain, and inflammation relief.</p>
             </div>
-
             <div class="tab-pane" id="usage">
                 <h3>How to Use</h3>
-                <div id="productUsage">
-                    <ol>
-                        <li>Take 1-2 tablets with water</li>
-                        <li>Use twice daily or as directed</li>
-                        <li>Do not exceed recommended dosage</li>
-                        <li>Consult doctor if symptoms persist</li>
-                    </ol>
-                </div>
+                <ol>
+                    <li>Take 1-2 tablets with water</li>
+                    <li>Use twice daily or as directed by your physician</li>
+                    <li>Do not exceed recommended dosage</li>
+                    <li>Consult doctor if symptoms persist beyond 3 days</li>
+                </ol>
             </div>
-
             <div class="tab-pane" id="reviews">
                 <h3>Customer Reviews</h3>
                 <div class="reviews-summary">
-                    <div class="rating-stats" id="ratingStats">
-                        <div class="stat">
-                            <span class="stat-label">Average Rating</span>
-                            <span class="stat-value">4.5 ★</span>
-                        </div>
+                    <div class="rating-stats">
+                        <div class="stat"><span class="stat-label">Average Rating</span><span class="stat-value">4.8 ★</span></div>
+                        <div class="stat"><span class="stat-label">Total Reviews</span><span class="stat-value">256</span></div>
                     </div>
                 </div>
                 <div class="reviews-list">
                     <div class="review-item">
-                        <div class="review-header">
-                            <strong>John Doe</strong>
-                            <span class="review-rating">★★★★★</span>
-                        </div>
-                        <p class="review-text">Excellent product! Very effective and fast delivery.</p>
+                        <div class="review-header"><strong>Rohit Sharma</strong><span class="review-rating">★★★★★</span></div>
+                        <p class="review-text">Excellent product! Very effective and fast delivery. Highly recommended.</p>
                     </div>
                     <div class="review-item">
-                        <div class="review-header">
-                            <strong>Sarah Smith</strong>
-                            <span class="review-rating">★★★★☆</span>
-                        </div>
-                        <p class="review-text">Good quality, would recommend to friends.</p>
+                        <div class="review-header"><strong>Priya Patel</strong><span class="review-rating">★★★★☆</span></div>
+                        <p class="review-text">Good quality medicine, works as expected. Would buy again.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Related Products -->
     <section class="related-products">
-        <div class="section-header">
-            <h2>Related Products</h2>
-            <p>You might also like these</p>
-        </div>
-        <div class="products-grid" id="relatedProducts">
-            <!-- Related products will be loaded by JavaScript -->
-        </div>
+        <div class="section-header"><h2>Related Products</h2><p>You might also like these</p></div>
+        <div class="products-grid" id="relatedProducts"></div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <div class="footer-section">
-                <h4>About MediCare</h4>
-                <p>Your trusted online medicine store delivering quality medicines safely and conveniently to your home.</p>
-            </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Contact Us</h4>
-                <p>Email: support@irshadhussain.com</p>
-                <p>Phone: 9391796638-MEDICARE</p>
-                <p>Hours: 24/7 Support Available</p>
-            </div>
-            <div class="footer-section">
-                <h4>Follow Us</h4>
-                <div class="social-links">
-                    <a href="#">Facebook</a>
-                    <a href="#">Twitter</a>
-                    <a href="#">Instagram</a>
-                </div>
-            </div>
+            <div class="footer-section"><h4>About IRSHAD HUSSAIN</h4><p>Your trusted online medicine store.</p></div>
+            <div class="footer-section"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+            <div class="footer-section"><h4>Contact Us</h4><p>Email: support@irshadhussain.com</p><p>Phone: 9391796638</p></div>
+            <div class="footer-section"><h4>Follow Us</h4><div class="social-links"><a href="#">FB</a><a href="#">TW</a><a href="#">IG</a><a href="#">YT</a></div></div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 IRSHAD HUSSAIN. All rights reserved. | Licensed Pharmacy</p>
-        </div>
+        <div class="footer-bottom"><p>&copy; 2026 IRSHAD HUSSAIN. All rights reserved. | Licensed Pharmacy</p></div>
     </footer>
-
+    <button class="back-to-top">↑</button>
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const grid = document.getElementById('relatedProducts');
+            if (grid) {
+                const related = products.filter(p => p.category === 'pain-relief').slice(0, 3);
+                grid.innerHTML = related.map(generateProductCardHTML).join('');
+            }
+        });
+    </script>
 </body>
 </html>

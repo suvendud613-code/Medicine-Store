@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IRSHAAD HUSSAIN - Online Medicine Store</title>
+    <title>IRSHAD HUSSAIN - Online Medicine Store</title>
+    <meta name="description" content="Your trusted online medicine store delivering quality medicines safely and conveniently to your doorstep.">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,29 +16,20 @@
                 <a href="index.html">IRSHAD HUSSAIN</a>
             </div>
             <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link active">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="products.html" class="nav-link">Products</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#categories" class="nav-link">Categories</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
-                </li>
+                <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
                 <li class="nav-item">
                     <a href="cart.html" class="nav-link cart-link">
                         <span class="cart-icon">🛒</span>
                         Cart <span class="cart-count">0</span>
                     </a>
                 </li>
+                <li class="nav-item"><button class="dark-toggle" title="Toggle Dark Mode">🌙</button></li>
             </ul>
             <div class="hamburger" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </div>
         </div>
     </nav>
@@ -45,11 +37,11 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Your Health, Our Priority</h1>
-            <p>Get quality medicines delivered to your doorstep safely and conveniently</p>
+            <h1><span id="typewriter">Your Health, Our Priority</span></h1>
+            <p>Get quality medicines delivered to your doorstep safely and conveniently. Trusted by thousands of customers across India.</p>
             <div class="hero-buttons">
-                <a href="products.html" class="btn btn-primary">Shop Now</a>
-                <a href="#categories" class="btn btn-secondary">Browse Categories</a>
+                <a href="products.html" class="btn btn-primary">🛒 Shop Now</a>
+                <a href="about.html" class="btn btn-secondary">Learn More</a>
             </div>
         </div>
         <div class="hero-image">
@@ -80,6 +72,28 @@
             <div class="feature-icon">👨‍⚕️</div>
             <h3>Expert Support</h3>
             <p>Pharmacist consultation available 24/7</p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-number" data-target="15000" data-suffix="+">0</span>
+                <span class="stat-label">Happy Customers</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="500" data-suffix="+">0</span>
+                <span class="stat-label">Products Available</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="50000" data-suffix="+">0</span>
+                <span class="stat-label">Orders Delivered</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="24" data-suffix="/7">0</span>
+                <span class="stat-label">Support Available</span>
+            </div>
         </div>
     </section>
 
@@ -129,11 +143,9 @@
             <h2>Featured Products</h2>
             <p>Top selling medicines this month</p>
         </div>
-        <div class="products-grid" id="featuredProducts">
-            <!-- Products will be loaded by JavaScript -->
-        </div>
+        <div class="products-grid" id="featuredProducts"></div>
         <div class="view-all">
-            <a href="products.html" class="btn btn-primary">View All Products</a>
+            <a href="products.html" class="btn btn-primary">View All Products →</a>
         </div>
     </section>
 
@@ -142,10 +154,10 @@
         <div class="newsletter-content">
             <h2>Stay Updated</h2>
             <p>Subscribe to get special offers and health tips</p>
-            <div class="newsletter-form">
+            <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
                 <input type="email" placeholder="Enter your email" required>
                 <button class="btn btn-primary">Subscribe</button>
-            </div>
+            </form>
         </div>
     </section>
 
@@ -153,7 +165,7 @@
     <footer class="footer" id="contact">
         <div class="footer-content">
             <div class="footer-section">
-                <h4>About MediCare</h4>
+                <h4>About IRSHAD HUSSAIN</h4>
                 <p>Your trusted online medicine store delivering quality medicines safely and conveniently to your home.</p>
             </div>
             <div class="footer-section">
@@ -161,22 +173,23 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="products.html">Products</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h4>Contact Us</h4>
                 <p>Email: support@irshadhussain.com</p>
-                <p>Phone: 9391796638-MEDICARE</p>
+                <p>Phone: 9391796638</p>
                 <p>Hours: 24/7 Support Available</p>
             </div>
             <div class="footer-section">
                 <h4>Follow Us</h4>
                 <div class="social-links">
-                    <a href="#">Facebook</a>
-                    <a href="#">Twitter</a>
-                    <a href="#">Instagram</a>
+                    <a href="#">FB</a>
+                    <a href="#">TW</a>
+                    <a href="#">IG</a>
+                    <a href="#">YT</a>
                 </div>
             </div>
         </div>
@@ -184,6 +197,9 @@
             <p>&copy; 2026 IRSHAD HUSSAIN. All rights reserved. | Licensed Pharmacy</p>
         </div>
     </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" title="Back to Top">↑</button>
 
     <script src="script.js"></script>
 </body>
