@@ -8,7 +8,7 @@ const products = [
         originalPrice: 59.99,
         rating: 4.8,
         reviews: 256,
-        icon: '💊',
+        icon: '<i class="fas fa-pills" style="font-size: 3rem; color: #fff;"></i>',
         manufacturer: 'MediCorp',
         description: 'Effective pain relief and fever reducer. FDA approved.'
     },
@@ -20,7 +20,7 @@ const products = [
         originalPrice: 49.99,
         rating: 4.9,
         reviews: 512,
-        icon: '🥗',
+        icon: '<i class="fas fa-apple-whole" style="font-size: 3rem; color: #fff;"></i>',
         manufacturer: 'HealthPlus',
         description: 'Boost your immune system with pure Vitamin C supplements.'
     },
@@ -32,7 +32,7 @@ const products = [
         originalPrice: 39.99,
         rating: 4.5,
         reviews: 189,
-        icon: '🤧',
+        icon: '<i class="fas fa-head-side-cough" style="font-size: 3rem; color: #fff;"></i>',
         manufacturer: 'PharmaCare',
         description: 'Fast-acting cough relief for cold and flu symptoms.'
     },
@@ -44,7 +44,7 @@ const products = [
         originalPrice: 69.99,
         rating: 4.6,
         reviews: 134,
-        icon: '🫖',
+        icon: '<i class="fas fa-mug-hot" style="font-size: 3rem; color: #fff;"></i>',
         manufacturer: 'WellnessLabs',
         description: 'Support healthy digestion with natural enzymes.'
     },
@@ -56,7 +56,7 @@ const products = [
         originalPrice: 45.00,
         rating: 4.7,
         reviews: 98,
-        icon: '🧴',
+        icon: '<i class="fas fa-pump-soap" style="font-size: 3rem; color: #fff;"></i>',
         manufacturer: 'DermaCare',
         description: 'Effective treatment for fungal skin infections.'
     },
@@ -68,7 +68,7 @@ const products = [
         originalPrice: 89.99,
         rating: 4.8,
         reviews: 267,
-        icon: '🩹',
+        icon: '<i class="fas fa-kit-medical" style="font-size: 3rem; color: #fff;"></i>',
         manufacturer: 'SafeGuard',
         description: 'Complete first aid kit for home and travel.'
     },
@@ -80,7 +80,7 @@ const products = [
         originalPrice: 34.99,
         rating: 4.7,
         reviews: 421,
-        icon: '💊',
+        icon: '<i class="fas fa-pills" style="font-size: 3rem; color: #fff;"></i>',
         manufacturer: 'MediCorp',
         description: 'Fast pain relief for headaches and body aches.'
     },
@@ -92,7 +92,7 @@ const products = [
         originalPrice: 59.99,
         rating: 4.6,
         reviews: 334,
-        icon: '🥗',
+        icon: '<i class="fas fa-apple-whole" style="font-size: 3rem; color: #fff;"></i>',
         manufacturer: 'VitaHealth',
         description: 'Complete daily nutrition with essential vitamins and minerals.'
     }
@@ -118,7 +118,15 @@ document.addEventListener('DOMContentLoaded', function() {
 // ========== Navigation & Menu ==========
 function toggleMenu() {
     const navMenu = document.querySelector('.nav-menu');
-    navMenu.classList.toggle('active');
+    if (navMenu.classList.contains('mobile-open')) {
+        $(navMenu).slideUp(300, function() {
+            navMenu.classList.remove('mobile-open');
+            navMenu.style.display = ''; // reset inline style so CSS takes over
+        });
+    } else {
+        navMenu.classList.add('mobile-open');
+        $(navMenu).slideDown(300);
+    }
 }
 
 // ========== Product Card HTML Generator ==========
@@ -126,13 +134,17 @@ function generateProductCardHTML(product) {
     const discount = Math.round((1 - (product.price / product.originalPrice)) * 100);
     return `
         <div class="product-card">
-            <div class="product-image">
-                ${product.icon}
-                ${discount > 0 ? `<div class="product-badge">-${discount}%</div>` : ''}
-            </div>
+            <a href="product-detail.html?id=${product.id}" style="text-decoration: none; color: inherit; display: block;">
+                <div class="product-image">
+                    ${product.icon}
+                    ${discount > 0 ? `<div class="product-badge">-${discount}%</div>` : ''}
+                </div>
+            </a>
             <div class="product-info">
                 <div class="product-category-tag">${product.category}</div>
-                <h3 class="product-name">${product.name}</h3>
+                <a href="product-detail.html?id=${product.id}" style="text-decoration: none; color: inherit;">
+                    <h3 class="product-name">${product.name}</h3>
+                </a>
                 <div class="product-rating">
                     <span class="stars">★★★★★</span> ${product.rating}
                 </div>
@@ -168,20 +180,20 @@ function filterProducts(category) {
 }
 
 // ========== Cart Management ==========
-function addToCart(productId) {
+function addToCart(productId, qty = 1) {
     const product = products.find(p => p.id === productId);
     if (!product) return;
 
     const existingItem = cart.find(item => item.id === productId);
     
     if (existingItem) {
-        existingItem.quantity += 1;
+        existingItem.quantity += qty;
     } else {
         cart.push({
             id: product.id,
             name: product.name,
             price: product.price,
-            quantity: 1,
+            quantity: qty,
             icon: product.icon
         });
     }
@@ -397,6 +409,95 @@ $(function() {
         card.addClass('highlight');
         setTimeout(() => card.removeClass('highlight'), 300);
     });
+
+    // ========== Theme Toggle ==========
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme) {
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        if (currentTheme === 'dark') {
+            $('#themeToggle').html('<i class="fas fa-sun"></i>');
+        } else {
+            $('#themeToggle').html('<i class="fas fa-moon"></i>');
+        }
+    }
+
+    $('#themeToggle').on('click', function() {
+        let theme = document.documentElement.getAttribute('data-theme');
+        if (theme === 'dark') {
+            document.documentElement.removeAttribute('data-theme');
+            localStorage.setItem('theme', 'light');
+            $(this).html('<i class="fas fa-moon"></i>');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+            $(this).html('<i class="fas fa-sun"></i>');
+        }
+    });
+
+    // ========== Back to Top ==========
+    $(window).on('scroll', function() {
+        if ($(window).scrollTop() > 300) {
+            $('#backToTop').fadeIn(250).css('display', 'flex');
+        } else {
+            $('#backToTop').fadeOut(250);
+        }
+    });
+
+    $('#backToTop').on('click', function() {
+        $('html, body').animate({ scrollTop: 0 }, 500);
+    });
+
+    // ========== Newsletter Form Validation ==========
+    $('.newsletter-form').on('submit', function(e) {
+        e.preventDefault();
+        const email = $(this).find('input[type="email"]').val();
+        if (email) {
+            showNotification('Successfully subscribed with ' + email + '!');
+            $(this).find('input[type="email"]').val('');
+        }
+    });
+
+    // ========== Product Detail Dynamic Load ==========
+    if ($('#productName').length && window.location.search.includes('id=')) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = parseInt(urlParams.get('id'));
+        const product = products.find(p => p.id === productId);
+
+        if (product) {
+            $('#productName').text(product.name);
+            $('#productCategory').text(product.category);
+            $('#productCategoryMeta').text(product.category);
+            $('#productBreadcrumb').text(product.name);
+            $('#mainImage, .thumbnail').html(product.icon);
+            $('#originalPrice').text('₹' + product.originalPrice);
+            $('#currentPrice').text('₹' + product.price);
+            
+            const discount = Math.round((1 - (product.price / product.originalPrice)) * 100);
+            if (discount > 0) {
+                $('#discountBadge').text('-' + discount + '%').show();
+            } else {
+                $('#discountBadge').hide();
+            }
+
+            $('#productRating').text('★★★★★');
+            $('.review-count').text('(' + product.reviews + ' reviews)');
+            $('#productDescription').text(product.description);
+            $('#productManufacturer').text(product.manufacturer);
+            
+            // Update Add to Cart button
+            $('#addToCartBtn').off('click').on('click', function() {
+                const qty = parseInt($('#quantity').val()) || 1;
+                addToCart(product.id, qty);
+            });
+            
+            // Load related products (same category)
+            const related = products.filter(p => p.category === product.category && p.id !== product.id).slice(0, 4);
+            const relatedGrid = document.getElementById('relatedProducts');
+            if (relatedGrid) {
+                relatedGrid.innerHTML = related.map(p => generateProductCardHTML(p)).join('');
+            }
+        }
+    }
 });
 
 function applyProductsFilters() {

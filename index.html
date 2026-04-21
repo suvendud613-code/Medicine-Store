@@ -4,14 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IRSHAAD HUSSAIN - Online Medicine Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <script>
+        // Apply dark mode immediately to prevent flash
+        (function() {
+            var t = localStorage.getItem('theme');
+            if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <span class="logo-icon">💊</span>
+                <span class="logo-icon"><i class="fas fa-capsules"></i></span>
                 <a href="index.html">IRSHAD HUSSAIN</a>
             </div>
             <ul class="nav-menu">
@@ -29,9 +37,12 @@
                 </li>
                 <li class="nav-item">
                     <a href="cart.html" class="nav-link cart-link">
-                        <span class="cart-icon">🛒</span>
+                        <span class="cart-icon"><i class="fas fa-shopping-cart"></i></span>
                         Cart <span class="cart-count">0</span>
                     </a>
+                </li>
+                <li class="nav-item">
+                    <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
                 </li>
             </ul>
             <div class="hamburger" onclick="toggleMenu()">
@@ -54,7 +65,7 @@
         </div>
         <div class="hero-image">
             <div class="hero-circle">
-                <span class="hero-emoji">💉</span>
+                <span class="hero-emoji"><i class="fas fa-syringe" style="font-size: 80px; color: #fff;"></i></span>
             </div>
         </div>
     </section>
@@ -62,22 +73,22 @@
     <!-- Features Section -->
     <section class="features">
         <div class="feature-card">
-            <div class="feature-icon">🚚</div>
+            <div class="feature-icon"><i class="fas fa-truck-fast"></i></div>
             <h3>Fast Delivery</h3>
             <p>Get your medicines within 24 hours</p>
         </div>
         <div class="feature-card">
-            <div class="feature-icon">✅</div>
+            <div class="feature-icon"><i class="fas fa-circle-check"></i></div>
             <h3>Verified Products</h3>
             <p>100% authentic and certified medicines</p>
         </div>
         <div class="feature-card">
-            <div class="feature-icon">🛡️</div>
+            <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
             <h3>Secure & Safe</h3>
             <p>Your health data is always protected</p>
         </div>
         <div class="feature-card">
-            <div class="feature-icon">👨‍⚕️</div>
+            <div class="feature-icon"><i class="fas fa-user-doctor"></i></div>
             <h3>Expert Support</h3>
             <p>Pharmacist consultation available 24/7</p>
         </div>
@@ -91,32 +102,32 @@
         </div>
         <div class="categories-grid">
             <div class="category-card" onclick="filterProducts('pain-relief')">
-                <div class="category-icon">💊</div>
+                <div class="category-icon"><i class="fas fa-pills"></i></div>
                 <h3>Pain Relief</h3>
                 <p>Tablets & Capsules</p>
             </div>
             <div class="category-card" onclick="filterProducts('cold-flu')">
-                <div class="category-icon">🤧</div>
+                <div class="category-icon"><i class="fas fa-head-side-cough"></i></div>
                 <h3>Cold & Flu</h3>
                 <p>Quick relief medicines</p>
             </div>
             <div class="category-card" onclick="filterProducts('vitamins')">
-                <div class="category-icon">🥗</div>
+                <div class="category-icon"><i class="fas fa-apple-whole"></i></div>
                 <h3>Vitamins</h3>
                 <p>Supplements & nutrients</p>
             </div>
             <div class="category-card" onclick="filterProducts('digestion')">
-                <div class="category-icon">🫖</div>
+                <div class="category-icon"><i class="fas fa-mug-hot"></i></div>
                 <h3>Digestion</h3>
                 <p>Digestive health</p>
             </div>
             <div class="category-card" onclick="filterProducts('skin-care')">
-                <div class="category-icon">🧴</div>
+                <div class="category-icon"><i class="fas fa-pump-soap"></i></div>
                 <h3>Skin Care</h3>
                 <p>Creams & ointments</p>
             </div>
             <div class="category-card" onclick="filterProducts('first-aid')">
-                <div class="category-icon">🩹</div>
+                <div class="category-icon"><i class="fas fa-kit-medical"></i></div>
                 <h3>First Aid</h3>
                 <p>Emergency supplies</p>
             </div>
@@ -184,6 +195,8 @@
             <p>&copy; 2026 IRSHAD HUSSAIN. All rights reserved. | Licensed Pharmacy</p>
         </div>
     </footer>
+
+    <button id="backToTop" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="script.js"></script>

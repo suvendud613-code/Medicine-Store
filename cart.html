@@ -4,14 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart - IRSHAD HUSSAIN</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <script>
+        (function() {
+            var t = localStorage.getItem('theme');
+            if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <span class="logo-icon">💊</span>
+                <span class="logo-icon"><i class="fas fa-capsules"></i></span>
                 <a href="index.html">IRSHAD HUSSAIN</a>
             </div>
             <ul class="nav-menu">
@@ -29,9 +36,12 @@
                 </li>
                 <li class="nav-item">
                     <a href="cart.html" class="nav-link cart-link active">
-                        <span class="cart-icon">🛒</span>
+                        <span class="cart-icon"><i class="fas fa-shopping-cart"></i></span>
                         Cart <span class="cart-count">0</span>
                     </a>
+                </li>
+                <li class="nav-item">
+                    <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
                 </li>
             </ul>
             <div class="hamburger" onclick="toggleMenu()">
@@ -57,7 +67,7 @@
                     <!-- Cart items will be loaded by JavaScript -->
                 </div>
                 <div class="empty-cart" id="emptyCart" style="display: none;">
-                    <div class="empty-icon">🛒</div>
+                    <div class="empty-icon"><i class="fas fa-cart-shopping" style="font-size: 5rem; color: var(--text-light);"></i></div>
                     <h3>Your cart is empty</h3>
                     <p>Start shopping to add items to your cart</p>
                     <a href="products.html" class="btn btn-primary">Continue Shopping</a>
@@ -141,6 +151,8 @@
             <p>&copy; 2026 IRSHAD HUSSAIN. All rights reserved. | Licensed Pharmacy</p>
         </div>
     </footer>
+
+    <button id="backToTop" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="script.js"></script>
